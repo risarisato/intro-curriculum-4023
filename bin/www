@@ -3,20 +3,25 @@
 /**
  * Module dependencies.
  */
-
+// appを読込んで
 var app = require('../app');
+// デバックモジュールがある
 var debug = require('debug')('schedule-arranger:server');
+// httpを読込んでサーバを立てている
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
+ * envファイルがあれば、そこからポート番号を設定する(デフォルトは3000)
  */
-
+// ポートの環境変数があった場合はそれを使って、ない場合は3000にする
 var port = normalizePort(process.env.PORT || '3000');
+// サーバ起動
 app.set('port', port);
 
 /**
  * Create HTTP server.
+ * HTTPサーバを生成
  */
 
 var server = http.createServer(app);
@@ -52,7 +57,7 @@ function normalizePort(val) {
 /**
  * Event listener for HTTP server "error" event.
  */
-
+// エラー時はonError()を呼ぶ
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -79,6 +84,7 @@ function onError(error) {
 
 /**
  * Event listener for HTTP server "listening" event.
+ * 正常系処理(適切なログを吐き出す)
  */
 
 function onListening() {

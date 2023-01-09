@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
   db:
-    build: 
+    build:
       context: "."
       dockerfile: "db.Dockerfile"
     environment:
@@ -23,4 +23,3 @@ services:
 volumes:
   schedule-arranger-data:
     external: true
-    

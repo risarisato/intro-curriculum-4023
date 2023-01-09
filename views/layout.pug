@@ -18,7 +18,13 @@ html
             a(href="/logout").nav-link #{user.username} をログアウト
         else
           li.nav-item
+            //- こちらは、GItHub認証で表示される
             a(href="/login").nav-link ログイン
     div.container
       block content
+      a(href="/chat").btn.btn-primary.btn-lg.m-4 認証しない
+      a(href="/login").btn.btn-secondary.btn-lg.m-4 GItHubで認証する
+      a(href="/").btn.btn-secondary.btn-lg.m-4 layoutは全体に反映
     script(src="/javascripts/bundle.js")
+div.container
+  p.footer-content &copy; risarisato since2023

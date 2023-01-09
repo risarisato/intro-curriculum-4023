@@ -1,6 +1,9 @@
 extends layout
 
 block content
+  //-- NOT Foundが表示される
   h1= message
+  //-- 404ステータスコード
   h2= error.status
+  //-- 勝手に改行する＞スッタクトレースの表示
   pre #{error.stack}
